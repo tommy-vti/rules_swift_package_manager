@@ -231,9 +231,6 @@ def _remove_bazel_files(repository_ctx, directory):
         repository_files.find_and_delete_files(repository_ctx, directory, file)
 
 def _remove_modulemaps(repository_ctx, directory, targets):
-    for target in targets:
-        if target.clang_src_info and target.clang_src_info.modulemap_path:
-            fail(">>> Debug: _remove_modulemaps =", target.clang_src_info)
     repository_files.find_and_delete_files(
         repository_ctx,
         directory,
