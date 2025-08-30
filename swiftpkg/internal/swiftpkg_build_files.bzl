@@ -737,7 +737,7 @@ def _system_library_build_file(target):
     # System library targets must include a modulemap file.
     # https://github.com/swiftlang/swift-package-manager/blob/12c14222fdde2ffd8303a2c805fed1b1eb802e5c/Sources/PackageLoading/PackageBuilder.swift#L853
     if not module_map_file:
-        fail("Expected a modulemap file for a system library target. name: ", target.name)
+        fail("Expected a modulemap file for a system library target. name: ", target.clang_src_info)
 
     header_files = target.clang_src_info.hdrs
     attrs["hdrs"] = header_files
